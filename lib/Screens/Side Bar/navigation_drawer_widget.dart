@@ -5,7 +5,8 @@ import 'package:gemsharbor/Screens/Splash_Screens/sign_up.dart';
 import 'package:gemsharbor/Screens/biding_screen.dart';
 import 'package:gemsharbor/Screens/category_screen.dart';
 import 'package:gemsharbor/Screens/notifcation_screen.dart';
-import 'package:gemsharbor/Screens/widget_screen.dart';
+import 'package:gemsharbor/Screens/notification_setting_screen.dart';
+import 'package:gemsharbor/Screens/widgets/widget_screen.dart';
 import 'package:gemsharbor/constaint.dart';
 import 'package:get/get.dart';
 
@@ -75,8 +76,8 @@ class NavigationDrawerWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     buildMenuItem(
-                      text: 'Emerald',
-                      icon: Icons.security,
+                      text: 'Notification Setting',
+                      icon: Icons.notifications_outlined,
                       onClicked: () => selectedItem(context, 3),
                     ),
 
@@ -191,6 +192,8 @@ class NavigationDrawerWidget extends StatelessWidget {
         Get.to(const NotificationScreen());
         break;
         case 3:
+
+          Get.to(const NotificationSettingsScreen());
         break;
         case 4:
           break;

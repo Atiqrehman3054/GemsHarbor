@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:gemsharbor/Screens/cart_screen.dart';
-import 'package:gemsharbor/Screens/widget_screen.dart';
+import 'package:gemsharbor/Screens/widgets/widget_screen.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 

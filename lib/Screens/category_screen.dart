@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gemsharbor/Screens/Side%20Bar/navigation_drawer_widget.dart';
-import 'package:gemsharbor/Screens/widget_screen.dart';
+import 'package:gemsharbor/Screens/widgets/widget_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constaint.dart';

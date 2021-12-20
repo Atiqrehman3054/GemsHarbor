@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gemsharbor/Screens/Side%20Bar/navigation_drawer_widget.dart';
-import 'package:gemsharbor/Screens/widget_screen.dart';
+import 'package:gemsharbor/Screens/widgets/widget_screen.dart';
 import 'package:getwidget/components/carousel/gf_carousel.dart';
 import 'package:video_player/video_player.dart';
 
@@ -45,7 +45,11 @@ class _DetailScreenState extends State<DetailScreen> {
     return Container(
       color: Colors.white,
       child: SafeArea(
+
         child: Scaffold(
+
+
+          backgroundColor:Colors.grey[300],
           drawer: const NavigationDrawerWidget(),
           body: Column(
             children: [
@@ -54,13 +58,15 @@ class _DetailScreenState extends State<DetailScreen> {
                 child: ListView(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          fixsize,
                           Stack(
                             alignment: Alignment.center,
                             children: [
+
                               Card(
                                 elevation: 3,
                                 child: _controller.value.isInitialized
@@ -96,114 +102,116 @@ class _DetailScreenState extends State<DetailScreen> {
                             ],
                           ),
                           fixsize,
-                          Text(
-                            "Item Information",
-                            style: heading,
-                            // style:heading.copyWith(
-                            //   color: kSplashColor,
-                            //         )
-                          ),
-                          Divider(
-                            thickness: 2,
-                            color: AppColors.blackColor,
-                          ),
-                          Row(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "Dimension",
-                                    style: smallfont,
-                                  ),
-                                  fixsize,
-                                  const Text(
-                                    "Weight (carats)",
-                                    style: smallfont,
-                                  ),
-                                  fixsize,
-                                  const Text(
-                                    "Colors",
-                                    style: smallfont,
-                                  ),
-                                  fixsize,
-                                  const Text(
-                                    "No Treatment",
-                                    style: smallfont,
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                width: 25,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "3.1 x 3.1 x 2.3mm ",
-                                    style: medfont,
-                                  ),
-                                  fixsize,
-                                  const Text(
-                                    "0.76 carats",
-                                    style: medfont,
-                                  ),
-                                  fixsize,
-                                  const Text(
-                                    "3.1 x 3.1 x 2.3mm ",
-                                    style: medfont,
-                                  ),
-                                  fixsize,
-                                  const Text(
-                                    "3.1 x 3.1 x 2.3mm ",
-                                    style: medfont,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          Divider(
-                            thickness: 2,
-                            color: AppColors.blueColor,
-                          ),
-                          fixsize,
-                          Text(
-                            "MONTANA SAPPHIRE PARCEL ",
-                            style: heading,
-                          ),
-                          fixsize,
-                          fixsize,
-                          const Text(
-                              "This is the parcel of un treated  saphhires from montana usa",
-                              style: TextStyle(fontSize: 12)),
-                          fixsize,
-                          const Text(
-                              "All our sapphires in our store are tested by gem certify.",
-                              style: TextStyle(fontSize: 12)),
-                          fixsize,
-                          const Text("ideal as accents stones.",
-                              style: TextStyle(fontSize: 12)),
-                          fixsize,
-                          const Text(
-                              "This is a parcel of un treated sapphires from Montana usa.",
-                              style: TextStyle(fontSize: 12)),
-                          fixsize,
-                          Divider(
-                            thickness: 2,
-                            color: AppColors.blueColor,
-                          ),
+                   MainContainer( widget: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Text(
+                         "Item Information",
+                         textAlign: TextAlign.center,
+                         style: heading,
+                         // style:heading.copyWith(
+                         //   color: kSplashColor,
+                         //         )
+                       ),
+                       Divider(
+                         thickness: 2,
+                         color: AppColors.blackColor,
+                       ),
+                       Row(
+                         children: [
+                           Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               const Text(
+                                 "Dimension",
+                                 style: smallfont,
+                               ),
+                               fixsize,
+                               const Text(
+                                 "Weight (carats)",
+                                 style: smallfont,
+                               ),
+                               fixsize,
+                               const Text(
+                                 "Colors",
+                                 style: smallfont,
+                               ),
+                               fixsize,
+                               const Text(
+                                 "No Treatment",
+                                 style: smallfont,
+                               ),
+                             ],
+                           ),
+                           const SizedBox(
+                             width: 25,
+                           ),
+                           Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               const Text(
+                                 "3.1 x 3.1 x 2.3mm ",
+                                 style: medfont,
+                               ),
+                               fixsize,
+                               const Text(
+                                 "0.76 carats",
+                                 style: medfont,
+                               ),
+                               fixsize,
+                               const Text(
+                                 "3.1 x 3.1 x 2.3mm ",
+                                 style: medfont,
+                               ),
+                               fixsize,
+                               const Text(
+                                 "3.1 x 3.1 x 2.3mm ",
+                                 style: medfont,
+                               ),
+                             ],
+                           )
+                         ],
+                       ),
+                       Divider(
+                         thickness: 2,
+                         color: AppColors.blueColor,
+                       ),
+                       fixsize,
+                       Text(
+                         "MONTANA SAPPHIRE PARCEL ",
+                         style: heading,
+                       ),
+                       fixsize,
+                       fixsize,
+                       const Text(
+                           "This is the parcel of un treated  saphhires from montana usa \n \n All our sapphires in our store are tested by gem certify. \n \n ideal as accents stones \n \n This is a parcel of un treated sapphires from Montana usa.",
+                           style: TextStyle(fontSize: 12)),
+                       fixsize,
+                       Divider(
+                         thickness: 2,
+                         color: AppColors.blueColor,
+                       ),
+
+                       fixsize,
+                     ],
+                   ),),
                           fixsize,
                           fixsize,
-                          Text("You May Also Like",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  color: AppColors.blueColor,
-                                  fontWeight: FontWeight.bold)),
-                          ALlGemGridview(),
-                          Divider(
-                            thickness: 2,
-                            color: AppColors.blueColor,
-                          ),
+                      MainContainer(widget: Column(children: [
+                        Text("You May Also Like",
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: AppColors.blueColor,
+                                fontWeight: FontWeight.bold)),
+                        fixsize,
+                        ALlGemGridview(),
+
+                        fixsize,
+                        Divider(
+                          thickness: 2,
+                          color: AppColors.blueColor,
+                        ),
+                      ],)),
                           Text("Recent Customer Feedback",
                               style: TextStyle(
                                   fontSize: 18,
@@ -683,11 +691,11 @@ class _DetailScreenState extends State<DetailScreen> {
                                           activeIndicator: AppColors.blueColor,
                                           passiveIndicator: Colors.grey,
                                           pauseAutoPlayOnTouch:
-                                              Duration(seconds: 10),
+                                              const Duration(seconds: 10),
                                           autoPlay: true,
                                           items: [
                                             Card(
-                                              child: Container(
+                                              child: SizedBox(
                                                 width: 250,
                                                 child: Column(
                                                   crossAxisAlignment:
@@ -1023,6 +1031,26 @@ class _DetailScreenState extends State<DetailScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class MainContainer extends StatelessWidget {
+   MainContainer({
+     required this.widget,
+    Key? key,
+  }) : super(key: key);
+ Widget widget;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+
+      padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: widget,
     );
   }
 }

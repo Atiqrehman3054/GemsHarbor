@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gemsharbor/Screens/Side%20Bar/navigation_drawer_widget.dart';
 import 'package:gemsharbor/Screens/payment_screen.dart';
-import 'package:gemsharbor/Screens/widget_screen.dart';
+import 'package:gemsharbor/Screens/widgets/widget_screen.dart';
 import 'package:gemsharbor/constaint.dart';
 import 'package:get/get.dart';
 
@@ -31,7 +31,7 @@ class _CartScreenState extends State<CartScreen> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Appbar2(),
+               Appbar2(buttonShow: false,),
               fixsize,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),

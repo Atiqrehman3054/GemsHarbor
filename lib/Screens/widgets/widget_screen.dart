@@ -1,10 +1,277 @@
 import 'package:flutter/material.dart';
 import 'package:gemsharbor/Screens/cart_screen.dart';
-import 'package:gemsharbor/Screens/category_screen.dart';
+import 'package:gemsharbor/Screens/profile_edit_screen.dart';
 import 'package:gemsharbor/Screens/profile_screen.dart';
 import 'package:gemsharbor/constaint.dart';
 import 'package:get/get.dart';
-import 'detail_screen.dart';
+import '../detail_screen.dart';
+
+class paymentCard extends StatelessWidget {
+  paymentCard({
+    required this.image,
+    required this.scale,
+    required this.onpressed,
+    Key? key,
+  }) : super(key: key);
+  String image ;
+  double scale;
+  Function() onpressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onpressed,
+      child: Container(
+        height: 220,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(
+              color: Colors.black12
+          ),
+          borderRadius: BorderRadius.circular(10),
+
+
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Image.asset("assets/image/$image",scale: scale,),
+
+                ],
+              ),
+              fixsize,
+              fixsize,
+              Text("Gems@gmail.com",style: textstyle3.copyWith(fontSize: 17),),
+              fixsize,
+              fixsize,
+              fixsize,
+
+              const Text("**** **** **** 2345",style:textstyle3,),
+              fixsize,
+              fixsize,
+              const Text("Expires 10-21",style:textstyle3,),
+
+
+
+            ],
+          ),
+        ),
+
+      ),
+    );
+  }
+}
+class Notificationcard extends StatelessWidget {
+  Notificationcard({
+
+  required this.name,
+  required this.data,
+
+    Key? key,
+  }) : super(key: key);
+  String name;
+  Widget data;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 220,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(
+            color: Colors.black12
+        ),
+        borderRadius: BorderRadius.circular(10),
+
+
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+           Text(name,style: const TextStyle(
+
+             fontSize: 15,
+             fontWeight: FontWeight.bold,
+           ),),
+            fixsize,
+            fixsize,
+           data,
+
+
+
+          ],
+        ),
+      ),
+
+    );
+  }
+}
+class CardSlider extends StatelessWidget {
+  const CardSlider({
+    Key? key,
+    required this.heightSize,
+    required this.widthSize,
+  }) : super(key: key);
+
+  final double heightSize;
+  final double widthSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: heightSize * 0.20,
+      width: widthSize / 1.1,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 7,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "23.87 ct Intense Red Rubellite \n Tourmaline Mozambique",
+                          style: popup_style.copyWith(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: bringColor),
+                        ),
+                        SizedBox(
+                          height: 7,
+                        ),
+                        Text(
+                            "5.42 ct Color Change GIA Certified Alexandrite \n Natural Oval Unheated Gemstone (176390)",
+                            style: popup_style.copyWith(
+                                fontSize: 10, color: blueColor)),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "\$4,000.00",
+                          style: popup_style.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: blueColor,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 7,
+                        ),
+                        MaterialButton(
+                          color: pinkColor,
+                          height: 30,
+                          minWidth: 48,
+                          onPressed: () {},
+                          child: const Text(
+                            "Buy Now",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Container(
+                      transform: Matrix4.translationValues(10, -40, 20),
+                      child: Image.asset(
+                        "assets/image/2.png",
+                        height: 150,
+                        width: 150,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+class CustomTextFeild extends StatelessWidget {
+  const CustomTextFeild({
+    this.controllers,
+    required this.hinttext,
+    required this.lable,
+    Key? key,
+  }) : super(key: key);
+
+  final String lable;
+  final String hinttext;
+  final TextEditingController? controllers;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          lable,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: kSplashColor,
+          ),
+        ),
+        fixsize,
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(
+                color: Colors.black38
+            ),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black38,
+                blurRadius: 5,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Material(
+            borderRadius: BorderRadius.circular(15),
+            elevation: 1.0,
+            child: TextFormField(
+              controller: controllers,
+              validator: (value){
+
+              },
+              decoration:
+              KTextFieldDecoration.copyWith(hintText: hinttext),
+            ),
+          ),
+        ),
+        fixsize,
+        fixsize,
+      ],
+    );
+  }
+}
+
 
 class AppButton extends StatelessWidget {
   AppButton({
@@ -22,9 +289,9 @@ class AppButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           primary: kSplashColor,
-          fixedSize:  Size(size, 40),
+          fixedSize:  Size(size, 50),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(15.0),
           ),
         ),
         onPressed: onpressed,
@@ -62,8 +329,6 @@ class AppButton1 extends StatelessWidget {
         ));
   }
 }
-
-
 
 
 class Appbar extends StatelessWidget {
@@ -138,7 +403,6 @@ class Appbar extends StatelessWidget {
 
   }
 }
-
 class Appbar1 extends StatelessWidget {
   const Appbar1({
     Key? key,
@@ -191,7 +455,7 @@ class Appbar1 extends StatelessWidget {
                         size: 35,
                       ),
                       onPressed: () {
-                        Get.to(const ProfileScreen());
+                        Get.to( ProfileScreen());
                       }),
                 ],
               ),
@@ -203,12 +467,13 @@ class Appbar1 extends StatelessWidget {
     );
   }
 }
-
-
 class Appbar2 extends StatelessWidget {
-  const Appbar2({
+   Appbar2({
+     required this.buttonShow,
     Key? key,
   }) : super(key: key);
+
+ bool buttonShow = false;
 
   @override
   Widget build(BuildContext context) {
@@ -225,10 +490,25 @@ class Appbar2 extends StatelessWidget {
           fit: BoxFit.fill,
         ),
 
+
       ),
+       child: Row(
+         mainAxisAlignment: MainAxisAlignment.end,
+         children: [
+           buttonShow == true ? IconButton(
+               onPressed: () async{
+
+                 Get.to(ProfileEditScreen());
+               },
+               icon:Icon(Icons.edit)
+           ): Text(""),
+         ],
+       ),
     );
   }
 }
+
+
 
 class GarletGridview extends StatelessWidget {
   const GarletGridview({
@@ -343,7 +623,6 @@ class GarletGridview extends StatelessWidget {
     );
   }
 }
-
 class RubyGridView extends StatelessWidget {
   const RubyGridView({
     Key? key,
@@ -459,7 +738,6 @@ class RubyGridView extends StatelessWidget {
     );
   }
 }
-
 class AllGems extends StatelessWidget {
   const AllGems({
     Key? key,
@@ -564,108 +842,9 @@ class AllGems extends StatelessWidget {
         });
   }
 }
-
-class CardSlider extends StatelessWidget {
-  const CardSlider({
-    Key? key,
-    required this.heightSize,
-    required this.widthSize,
-  }) : super(key: key);
-
-  final double heightSize;
-  final double widthSize;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: heightSize * 0.20,
-      width: widthSize / 1.1,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 7,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "23.87 ct Intense Red Rubellite \n Tourmaline Mozambique",
-                          style: popup_style.copyWith(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                              color: bringColor),
-                        ),
-                        SizedBox(
-                          height: 7,
-                        ),
-                        Text(
-                            "5.42 ct Color Change GIA Certified Alexandrite \n Natural Oval Unheated Gemstone (176390)",
-                            style: popup_style.copyWith(
-                                fontSize: 10, color: blueColor)),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "\$4,000.00",
-                          style: popup_style.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: blueColor,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 7,
-                        ),
-                        MaterialButton(
-                          color: pinkColor,
-                          height: 30,
-                          minWidth: 48,
-                          onPressed: () {},
-                          child: const Text(
-                            "Buy Now",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Container(
-                      transform: Matrix4.translationValues(10, -40, 20),
-                      child: Image.asset(
-                        "assets/image/2.png",
-                        height: 150,
-                        width: 150,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
 class ALlGemGridview extends StatelessWidget {
+  const ALlGemGridview({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scrollbar(
@@ -777,65 +956,3 @@ class ALlGemGridview extends StatelessWidget {
   }
 }
 
-
-
-class CustomTextFeild extends StatelessWidget {
-  const CustomTextFeild({
-    this.controllers,
-    required this.hinttext,
-    required this.lable,
-    Key? key,
-  }) : super(key: key);
-
-  final String lable;
-  final String hinttext;
-  final TextEditingController? controllers;
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          lable,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
-            color: kSplashColor,
-          ),
-        ),
-    fixsize,
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            border: Border.all(
-                color: Colors.black38
-            ),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black38,
-                blurRadius: 5,
-                offset: Offset(0, 2),
-              ),
-            ],
-          ),
-          child: Material(
-            borderRadius: BorderRadius.circular(15),
-            elevation: 1.0,
-            child: TextFormField(
-              controller: controllers,
-              validator: (value){
-
-              },
-              decoration:
-              KTextFieldDecoration.copyWith(hintText: hinttext),
-            ),
-          ),
-        ),
-        fixsize,
-        fixsize,
-      ],
-    );
-  }
-}

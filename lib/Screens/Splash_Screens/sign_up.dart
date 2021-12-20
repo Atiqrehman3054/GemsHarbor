@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gemsharbor/Screens/widget_screen.dart';
+import 'package:gemsharbor/Screens/widgets/widget_screen.dart';
 import 'package:gemsharbor/constaint.dart';
 import 'package:get/get.dart';
 import '../home_screen.dart';
@@ -22,7 +22,7 @@ class _SignUpState extends State<SignUp> {
               mainAxisAlignment: MainAxisAlignment.start,
                 children: [
 
-                  const Appbar2(),
+                  Appbar2(buttonShow: false,),
                   Container(
                       width: double.infinity,
                       margin: const EdgeInsets.all(15.0),

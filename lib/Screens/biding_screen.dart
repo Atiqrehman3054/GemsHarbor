@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gemsharbor/Screens/Side%20Bar/navigation_drawer_widget.dart';
 import 'package:gemsharbor/Screens/chart_screen.dart';
-import 'package:gemsharbor/Screens/widget_screen.dart';
+import 'package:gemsharbor/Screens/widgets/widget_screen.dart';
 import 'package:gemsharbor/constaint.dart';
 
 class BidingScreen extends StatefulWidget {

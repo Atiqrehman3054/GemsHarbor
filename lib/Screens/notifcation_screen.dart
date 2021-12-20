@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gemsharbor/Screens/widget_screen.dart';
+import 'package:gemsharbor/Screens/widgets/widget_screen.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({Key? key}) : super(key: key);
@@ -10,7 +10,7 @@ class NotificationScreen extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            const Appbar2(),
+             Appbar2(buttonShow: false,),
             Expanded(
               flex: 7,
               child: ListView.builder(
